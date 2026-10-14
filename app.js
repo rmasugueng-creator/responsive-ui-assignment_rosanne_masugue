@@ -1,8 +1,8 @@
 // 4 regex mandatory
-const nameRegex = /^[a-zA-ZÀ-ÿ\s]{3,100}\$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+\$/;
-const phoneRegex = /^[0-9]{8,15}\$/;
-const securityRegex = /^(?=.*[A-Z])(?=.*\d).{6,}\$/;
+const nameRegex = /^[a-zA-ZÀ-ÿ\s]{3,100}$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phoneRegex = /^[0-9]{8,15}$/;
+const securityRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
 
 let contacts = JSON.parse(localStorage.getItem('my_contacts')) || [];
 let editIndex = -1; 
