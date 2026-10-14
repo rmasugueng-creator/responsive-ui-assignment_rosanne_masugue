@@ -1,5 +1,5 @@
 // 4 Regex mandatory
-const nameRegex = /^[a-zA-Z\s]{3,1000}\$/;
+const nameRegex = /^[a-zA-ZÀ-ÿ\s]{3,100}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+\$/;
 const phoneRegex = /^[0-9]{10}\$/;
 const securityRegex = /^(?=.*[A-Z])(?=.*\d).{6,}\$/; // Lookahead: 1 uppercase letter, 1 number, 6 letters minimum
