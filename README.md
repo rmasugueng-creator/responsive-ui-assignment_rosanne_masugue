@@ -20,11 +20,13 @@ I designed this application to be as simple and concise as possible. I avoided c
 
 ### 4. Code Catalog: Form Validation via Regex
 I wrote 4 explicit regular expressions to validate user inputs before submission:
-1. `nameRegex = /^[a-zA-Z\s]{3,30}$/` -> Ensures the name contains only letters and spaces, between 3 and 30 characters long.
-2. `emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/` -> A simple, effective check for an `@` symbol and a valid domain dot.
-3. `phoneRegex = /^[0-9]{10}$/` -> Enforces exactly 10 numerical digits.
+1. `nameRegex = /^[a-zA-ZÀ-ÿ\s]{3,100}$/` -> Ensures the name contains only letters and spaces, accommodating longer names up to 100 characters.
+2. `emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/` -> A flexible, universal pattern that accurately checks for standard email formatting.
+3. `phoneRegex = /^[0-9]{8,15}$/` -> A flexible configuration that accepts standard international numbers between 8 and 15 digits.
 4. `securityRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/` -> **This is my advanced validation.** It uses two independent **positive lookaheads**:
    - `(?=.*[A-Z])`: Scans the string to verify at least one uppercase letter exists.
    - `(?=.*\d)`: Scans the string to verify at least one number exists.
    - `.{6,}`: Ensures the total length is at least 6 characters.
-   Using lookaheads allowed me to check multiple conditions simultaneously without breaking or complicating the input stream.
+
+### 5. Dynamic Theme Selection (Dark Mode)
+To improve user experience (UX) and contrast accessibility, I implemented a custom theme switcher. The system reads and updates a custom `data-theme` attribute on the root HTML element. The user's visual preference is dynamically saved into `localStorage` so the chosen theme persists across separate browser sessions.
