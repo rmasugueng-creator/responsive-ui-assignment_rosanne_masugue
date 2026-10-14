@@ -1,7 +1,37 @@
+/* These are all the Light Mode variables. */
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #0f172a;
+    --border-color: #cbd5e1;
+    --btn-primary: #2563eb;
+    --btn-text: #ffffff;
+}
+/* These are all the color variables for Dark Mode. */
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --border-color: #334155;
+    --btn-primary: #38bdf8;
+    --btn-text: #0f172a;
+}
+/* General styles */
 body {
     font-family: sans-serif;
     padding: 15px;
-    background: #fdfdfd;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* That’s for the smooth animation when switching themes.*/
+}
+header {
+    margin-bottom: 20px;
+}
+section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
 }
 form label {
     display: block;
@@ -12,20 +42,29 @@ form input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
 }
 button {
     margin-top: 10px;
     padding: 8px 12px;
     cursor: pointer;
+    background-color: var(--btn-primary);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
 }
 main {
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 @media (min-width: 768px) {
     main {
-        grid-template-columns: 1fr 2fr; 
+        grid-template-columns: 1fr 2fr;
     }
     header {
         display: flex;
